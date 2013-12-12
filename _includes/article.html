@@ -1,0 +1,41 @@
+{% if page %}
+  {% assign article = page %}
+{% endif %}
+
+<article>
+  <div class="post-date">
+    <span class="post-date-month">
+      {{ (article.date | date: "%b" }}
+    </span>
+    <span class="post-date-day">
+      {{ article.date | date: "%d" }}
+    </span>
+  </div>
+  <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+  <h2>{{ article.subheading }}</h1>
+  <div class="clear"></div>
+  <span class="post-category">
+    <span class="label">{{ article.categories }}</span>
+  </span>
+  <div class="post-meta">
+    <a href="https://github.com/thatrubylove" class="post-author">
+      by: {{ article.author }}
+    </a>
+  </div>
+  <div class="post-content">
+    {% if content %}
+      {{ content }}
+    {% else %}
+        {{ article.content }}
+    {% endif %}
+  </div>
+</article>
+
+<div id="comments">
+  <p class="comment_note">
+    Comments are appreciated via email.<br/>
+    Particularily good ones will spawn content or cause me to rethink what I have thunk<br/>
+    This blog, however, is not the place for the ugliness that goes on in the interwebs.
+   </p>
+   <p><a href="mailo:thatrubylove+comments@gmail.com">Send me your comments!</a></p>
+</div>
