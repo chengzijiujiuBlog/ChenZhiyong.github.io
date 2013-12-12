@@ -1,13 +1,13 @@
-name: RubyLove
-url: http://rubylove.io
-subheading: Functional Ruby, Code Beauty, and Ruby Internals
-keywords: functional programming, functional ruby, idiomatic ruby, ruby internals, testing practices
-title: Functional Programming in Ruby, Ruby Internals, Ruby API, Concurrency in Ruby, Ruby without Rails) - RubyLove
+name: CodeCatalyst
+url: http://chenzhiyong.yumumu.me
+subheading: “别活得太认真，你逃不出你的命运。” – Van Wilder
+keywords: 编程，算法
+title: CodeCatalyst
 markdown: redcarpet
 permalink: /:categories/:year/:month/:day/:title/
 pygments: true
 comments:
   provider: disqus
   disqus:
-    short_name: thatrubylove
+    short_name: CodeCatalyst
 
