@@ -1,36 +1,37 @@
-# This is the default format. 
-# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
-pygments: false
+pygments: true
+# 分页配置，每页最多显示几篇文章
+paginate: 4
 
-# Themes are encouraged to use these universal variables 
-# so be sure to set them if your theme uses them.
-#
-title : 戴云山人
-tagline: 别活得太认真，你逃不出你的命运。
+# 修改为自己的配置
+title : 隐匿于黑夜中的星
+tagline: 时间的回响，思维的残影
 author :
-  name : 
-  email : 陈志勇@gmail.com
-  github : ChenZhiyong
-  twitter : ChenZhiyong
-  facebook : ChenZhiyong
+  name : codepiano
+  email : anyexingchen999@qq.com
+  github : https://github.com/codepiano
+  twitter : http://twitter.com/anyexingchen
+
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
 # Most places will/should use BASE_PATH to make the urls
 #
 # If you have set a CNAME (pages.github.com) set your custom domain here.
-# Else if you are pushing to username.github.com, replace with your username.
+# Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://chenzhiyong.yumumu.me/
+# 博客地址，如果没有自定义CNAME，写用户名即可
+production_url : http://blog.codepiano.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
-#
-JB :
-  version : 0.2.13
+# 我使用我的id作为了这个属性的属性名
+# 如果你想修改，最好使用替换工具，把所有文件中的"codepiano"，替换为你想要的名字
+# 然后重命名以我的id为名的所有文件和目录
+codepiano :
+  version : 0.3.0
 
   # All links will be namespaced by BASE_PATH if defined.
   # Links in your website should always be prefixed with {{BASE_PATH}}
@@ -40,14 +41,14 @@ JB :
   #   DO NOT SET BASE_PATH 
   #   (urls will be prefixed with "/" and work relatively)
   #
-  # GitHub Pages (http://username.github.com)
+  # GitHub Pages (http://username.github.io)
   #   DO NOT SET BASE_PATH 
   #   (urls will be prefixed with "/" and work relatively)
   #
-  # GitHub Project Pages (http://username.github.com/project-name)
+  # GitHub Project Pages (http://username.github.io/project-name)
   #
   #   A GitHub Project site exists in the `gh-pages` branch of one of your repositories.
-  #  REQUIRED! Set BASE_PATH to: http://username.github.com/project-name
+  #  REQUIRED! Set BASE_PATH to: http://username.github.io/project-name
   #
   # CAUTION:
   #   - When in Localhost, your site will run from root "/" regardless of BASE_PATH
@@ -69,40 +70,31 @@ JB :
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change them here if needed.
   #
-  archive_path: /archive.html
+  archive_path: /posts.html
   categories_path : /categories.html
-  tags_path : /tags.html
+  tags_path : /posts.html
+  atom_path : /atom.xml
+  rss_path : /rss.xml
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
   # Set 'provider' to false to turn commenting off globally.
-  #
+  # 修改评论服务设置，short_name修改为你的disque账户名
+  # 如果想自定义评论服务提供商，请自行google
   comments :
-    provider : duoshuo
+    provider : disqus
     disqus :
-      short_name : jekyllbootstrap
-    livefyre :
-      site_id : 123
-    intensedebate :
-      account : 123abc
-    facebook :
-      appid : 123
-      num_posts: 5
-      width: 580
-      colorscheme: light
+      short_name : codepiano
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
-  #        
+  # 修改google分析工具的id       
+  # 如果想自定义分析服务提供商，请自行google
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
-    getclicky :
-      site_id : 
-    mixpanel :
-        token : '_MIXPANEL_TOKEN_'
+        tracking_id : 'UA-40934298-1'
 
   # Settings for sharing helper. 
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.
@@ -122,5 +114,4 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-paginate: true
-paginate: 3 
+  

@@ -1,22 +1,48 @@
 ---
-layout: default
-tagline: Supporting tagline
+layout: page
+title: 关于
+header: about me
+group: navigation
+index: 4
 ---
-
-{% include JB/setup %}
-<ul id="post-list">
-	<li class="post text">
-		<div class="body">
-		<center><img src="images/aboutme.png" alt="me"></center>
-		
-<p>
-大家好，我是89年出生的码虫一条，先就读于厦门大学软件学院</p>
-<p>
-喜好：看电影 | 看动漫 | 听音乐 | 瞎捣鼓</p>
-<p>
-喜欢的人：Andrew Ng</p>
-
-		</div>
-	</li>
-</ul>
-
+{% include codepiano/setup %}
+<div>
+  <h2>
+    关于
+  </h2>
+  <p class="about">
+    爱看书的程序员
+  </p>
+  <h2>
+    链接
+  </h2>
+  <table class="table table-striped" id="about-me">
+    <tbody>
+      <tr>
+        <td class="span3"><i class="icon-github"> </i><span>我的github</span></td>
+        <td><a href="https://github.com/codepiano">codepiano · GitHub</a></td>
+      </tr>
+      <tr>
+        <td class="span3"><i class="icon-question-sign"> </i><span>我的知乎</span></td>
+        <td><a href="http://www.zhihu.com/people/codepiano">codepiano - 知乎</a></td>
+      </tr>
+      <tr>
+        <td class="span3"><i class="icon-weibo"></i> <span>我的微博</span></td>
+        <td><a href="http://www.weibo.com/anyexingchen">codepiano - 新浪微博</a> </td>
+      </tr>
+      <tr>
+        <td class="span3"><i class="icon-book"></i> <span>我的豆瓣</span></td>
+        <td><a href="http://www.douban.com/people/codepiano">codepiano - 豆瓣</a> </td>
+      </tr>
+      <tr>
+        <td class="span3"><i class="icon-envelope"></i> <span>我的邮箱</span></td>
+        <td><a href="mailto:codepiano.li@gmail.com">codepiano · Gmail</a> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br />
+<br />
+<br />
+<div id="comment-hook"></div>
+{% include codepiano/comments %}

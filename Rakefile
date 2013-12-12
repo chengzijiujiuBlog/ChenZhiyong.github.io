@@ -5,11 +5,11 @@ require 'time'
 
 SOURCE = "."
 CONFIG = {
-  'version' => "0.2.13",
+  'version' => "0.3.0",
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
   'posts' => File.join(SOURCE, "_posts"),
-  'post_ext' => "md",
+  'post_ext' => "html",
   'theme_package_version' => "0.1.0"
 }
 
@@ -40,11 +40,12 @@ module JB
   end #Path
 end #JB
 
-# Usage: rake post title="A Title" [date="2012-02-09"]
+# Usage: rake post title="A Title" [date="2012-02-09"] [tags=[tag1, tag2]]
 desc "Begin a new post in #{CONFIG['posts']}"
 task :post do
   abort("rake aborted: '#{CONFIG['posts']}' directory not found.") unless FileTest.directory?(CONFIG['posts'])
   title = ENV["title"] || "new-post"
+  tags = ENV["tags"] || "[]"
   slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   begin
     date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
@@ -61,12 +62,15 @@ task :post do
   open(filename, 'w') do |post|
     post.puts "---"
     post.puts "layout: post"
+    post.puts "keywords: blog"
+    post.puts "description: blog"
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
-    post.puts 'description: ""'
-    post.puts "category: "
-    post.puts "tags: []"
+    post.puts "categories: [Archive]"
+    post.puts "tags: [Archive]"
+    post.puts 'group: archive'
+    post.puts 'icon: file-alt'
     post.puts "---"
-    post.puts "{% include JB/setup %}"
+    post.puts "{% include codepiano/setup %}"
   end
 end # task :post
 
@@ -88,10 +92,12 @@ task :page do
   open(filename, 'w') do |post|
     post.puts "---"
     post.puts "layout: page"
+    post.puts "keywords: blog"
+    post.puts "description: blog"
     post.puts "title: \"#{title}\""
-    post.puts 'description: ""'
+    post.puts 'group: static'
     post.puts "---"
-    post.puts "{% include JB/setup %}"
+    post.puts "{% include codepiano/setup %}"
   end
 end # task :page
 
@@ -140,7 +146,7 @@ namespace :theme do
           page.puts "layout: default"
           page.puts "---"
         end 
-        page.puts "{% include JB/setup %}"
+        page.puts "{% include codepiano/setup %}"
         page.puts "{% include themes/#{theme_name}/#{File.basename(filename)} %}" 
       end
     end
@@ -197,8 +203,8 @@ namespace :theme do
     # Mirror each file into the framework making sure to prompt if already exists.
     packaged_theme_files.each do |filename|
       file_install_path = File.join(JB::Path.base, filename)
-      if File.exist? file_install_path
-        next if ask("#{file_install_path} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+      if File.exist? file_install_path and ask("#{file_install_path} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+        next
       else
         mkdir_p File.dirname(file_install_path)
         cp_r File.join(packaged_theme_path, filename), file_install_path
