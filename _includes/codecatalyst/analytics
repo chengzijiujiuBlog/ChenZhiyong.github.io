@@ -1,0 +1,14 @@
+{% if site.safe and site.codecatalyst.analytics.provider and page.codecatalyst.analytics != false %}
+
+{% case site.codecatalyst.analytics.provider %}
+{% when "google" %}
+  {% include codecatalyst/analytics-providers/google %}
+{% when "getclicky" %}
+  {% include codecatalyst/analytics-providers/getclicky %}
+{% when "mixpanel" %}
+  {% include codecatalyst/analytics-providers/mixpanel %}
+{% when "custom" %}
+  {% include custom/analytics %}
+{% endcase %}
+
+{% endif %}

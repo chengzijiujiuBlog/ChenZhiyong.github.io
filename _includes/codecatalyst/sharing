@@ -1,0 +1,8 @@
+{% if site.safe and site.codecatalyst.sharing.provider and page.codecatalyst.sharing != false %}
+
+{% case site.codecatalyst.sharing.provider %}
+{% when "custom" %}
+  {% include custom/sharing %}
+{% endcase %}
+
+{% endif %}
