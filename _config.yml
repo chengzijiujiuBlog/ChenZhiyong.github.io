@@ -4,16 +4,16 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 pygments: true
 # 分页配置，每页最多显示几篇文章
-paginate: 5
+paginate: 4
 
 # 修改为自己的配置
-title : 青春勃发
-tagline: 时间会检验一切
+title : 隐匿于黑夜中的星
+tagline: 时间的回响，思维的残影
 author :
-  name : CodeCatalyst
-  email : chenzhiyong115@gmail.com
-  github : https://github.com/chenzhiyong
-  twitter : http://twitter.com/chenzhiyong
+  name : codepiano
+  email : anyexingchen999@qq.com
+  github : https://github.com/codepiano
+  twitter : http://twitter.com/anyexingchen
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -24,13 +24,13 @@ author :
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 # 博客地址，如果没有自定义CNAME，写用户名即可
-production_url : http://chenzhiyong.yumumu.me
+production_url : http://blog.codepiano.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 # 我使用我的id作为了这个属性的属性名
-# 如果你想修改，最好使用替换工具，把所有文件中的"codecatalyst"，替换为你想要的名字
+# 如果你想修改，最好使用替换工具，把所有文件中的"codepiano"，替换为你想要的名字
 # 然后重命名以我的id为名的所有文件和目录
-codecatalyst :
+codepiano :
   version : 0.3.0
 
   # All links will be namespaced by BASE_PATH if defined.
@@ -84,7 +84,7 @@ codecatalyst :
   comments :
     provider : disqus
     disqus :
-      short_name : CodeCatalyst
+      short_name : codepiano
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.

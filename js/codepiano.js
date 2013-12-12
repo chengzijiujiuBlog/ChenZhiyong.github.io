@@ -1,7 +1,7 @@
 /* =============================================================================
-#     FileName: codecatalyst.js
+#     FileName: codepiano.js
 #         Desc: javascript for blog
-#       Author: codecatalyst
+#       Author: codepiano
 #        Email: anyexingchen999@qq.com
 #     HomePage: http://www.weibo.com/anyexingchen
 #      Version: 0.0.1
